@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Swap {
@@ -22,6 +23,16 @@ public class Swap {
         // Implement here
         // asking for the two indices
         // and then swapping them
+
+        ArrayList<Integer> indices = new ArrayList<>();
+        System.out.println("Give two indices to swap:");
+        for(int i = 0; i < 2; i++){
+            indices.add(Integer.valueOf(scanner.nextLine()));
+        }
+
+        int temporaryValueHolder = array[indices.get(0)];
+        array[indices.get(0)] = array[indices.get(1)];
+        array[indices.get(1)] = temporaryValueHolder;
 
         System.out.println("");
         index = 0;
