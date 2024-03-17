@@ -2,6 +2,12 @@
 public class MainProgram {
 
     public static void main(String[] args) {
-        // Test your counter here
+        Counter myCounter = new Counter(5);
+        System.out.println(myCounter.value());
+        myCounter.increase();
+        myCounter.increase(10);
+        System.out.println(myCounter.value());
+        myCounter.decrease();
+        System.out.println(myCounter.value());
     }
 }
