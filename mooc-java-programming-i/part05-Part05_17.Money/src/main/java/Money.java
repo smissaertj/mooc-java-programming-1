@@ -32,4 +32,48 @@ public class Money {
         return this.euros + "." + zero + this.cents + "e";
     }
 
+    public Money plus(Money addition){
+        return new Money(this.euros + addition.euros, this.cents + addition.cents);
+    }
+
+    public Money minus(Money decreaser) {
+        int newEuros;
+        int newCents;
+    
+        if (this.euros < decreaser.euros || (this.euros == decreaser.euros && this.cents < decreaser.cents)) {
+            // If the decreaser's value is greater than this Money object's value, return 0
+            newEuros = 0;
+            newCents = 0;
+        } else {
+            newEuros = this.euros - decreaser.euros;
+            if (this.cents < decreaser.cents) {
+                // Borrow 1 euro and add 100 cents
+                newEuros -= 1;
+                newCents = this.cents + 100 - decreaser.cents;
+            } else {
+                newCents = this.cents - decreaser.cents;
+            }
+        }
+    
+        return new Money(newEuros, newCents);
+    }
+
+    public boolean lessThan(Money compared){
+        // Are the objects on the same memory address? Then they're equal and not "less than"
+        if (this == compared){
+            return false;
+        }
+
+        // Compare the values of the Objects.
+        if (
+            this.euros < compared.euros ||
+
+            (this.euros <= compared.euros &&
+            this.cents < compared.cents)
+        ) { return true;}
+
+
+        return false;
+    }
+
 }
