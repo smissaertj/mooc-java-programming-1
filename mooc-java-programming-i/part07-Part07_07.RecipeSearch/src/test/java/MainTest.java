@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Rule;
 
-public class RecipeSearchTest {
+public class MainTest {
 
     @Rule
     public MockStdio io = new MockStdio();
@@ -93,7 +93,7 @@ public class RecipeSearchTest {
         commands += "stop\n";
 
         io.setSysIn(commands);
-        RecipeSearch.main(new String[]{});
+        Main.main(new String[]{});
 
         String print = io.getSysOut();
         for (String expected : expectedPrints) {

@@ -1,5 +1,5 @@
 Pancake dough
-60
+15
 milk
 egg
 flour
@@ -8,7 +8,7 @@ salt
 butter
 
 Meatballs
-20
+10
 ground meat
 egg
 breadcrumbs
